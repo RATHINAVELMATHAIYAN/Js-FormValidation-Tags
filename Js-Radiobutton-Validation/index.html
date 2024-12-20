@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="myform" onsubmit="return validate()">
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gen" value="male">
+        <label>male</label><br>
+        <input type="radio" id="female" name="gen" value="female">
+        <label>Female</label><br>
+        <span id="spgen" style="color: red;"></span><br>
+        <input type="submit" value="submit" onclick="validate()">
+    </form>
+    <script>
+function validate(){
+    var d =document.getElementsByName('gen');
+    var k = 0 ;
+    for(var i =0; i < d.length; i++){
+        if(d[i].checked){
+            k ++;
+        }
+    }
+    if (k== 0){
+        document.getElementById('spgen').innerHTML="please select a gender";
+        return false;
+    }
+    else{
+        document.getElementById('spgen').innerHTML = " ";
+    }
+    return true;
+}
+    </script>
+</body>
+
+</html>

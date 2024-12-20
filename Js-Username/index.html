@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <!-- Input Username -->
+    <form name="myform">
+        <label>Name:</label><input type="text" name="fname" id="fname"><br><br>
+        <input type="submit" value="submit" onclick="validate()">
+    </form>
+
+</body>
+
+<script>
+    // Method - 3
+function validate(){
+    var namelen = /^([a-zA-Z]{6,15})+$/;
+    var name = document.getElementById('fname').value;
+    if(!namelen.test(name)){
+        document.writeln("Enter a valid name With 6 to 15 characters");
+        return false;
+    }
+}
+</script>
+</html>

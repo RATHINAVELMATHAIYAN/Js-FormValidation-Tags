@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myForm" onsubmit="return validate()">
+        <label for="quali">Qualification</label><br>
+        <select name="" id="quali">
+            <option value="select">Select</option>
+            <option value="bachelors">bachelors</option>
+            <option value="masters">masters</option>
+            <option value="phd">phd</option>
+        </select>
+        <span id="spquali" style="color: red;"></span><br><br>
+        <input type="submit" value="submit">
+    </form>
+    <script>
+        function validate(){
+            var selectedQualification = document.getElementById('quali').value;
+            if(selectedQualification == "select"){
+                document.getElementById('spquali').innerHTML = "Select the Qualification";
+                return false;
+            }
+            else{
+                document.getElementById('spquali').innerHTML="";
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

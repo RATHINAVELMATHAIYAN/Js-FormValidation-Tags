@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myForm" onsubmit="return validate()">
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob" ><br><br>
+        current Age:<input type="text" id="age" readonly></p>
+        <input type="submit" value="Calculate Age">
+    </form>
+    <script>
+        function validate(){
+            var dob = new Date(document.forms["myForm"]["dob"].value);
+            var today = new Date();
+            var age = today.getFullYear() - dob.getFullYear();
+            var monthDiff = today.getMonth() - dob.getMonth();
+            if(monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())){
+                age--;
+            }
+            alert ("Age is:"+age);
+            document.getElementById("age").value=age;
+            return false;
+        }
+    </script>
+</body>
+</html>

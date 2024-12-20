@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name"myForm" onsubmit="return validateForm()">
+        <input type="checkbox" id="checkbox" name="checkbox">
+        <label for="checkbox">I agree to the terms and conditions</label><br>
+        <input type="submit" value="submit">
+    </form>
+    <script>
+        function validateForm(){
+            var checkbox = document.getElementById('checkbox');
+            if(!checkbox.checked){
+                alert ("Please agree terms and conditions");
+                return false;
+            }
+            else{
+                alert("Thank you agreeing the terms and conditions");
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
